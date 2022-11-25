@@ -72,7 +72,9 @@ def dashboard():
         userLikedthoughts = User.get_logged_user_liked_thoughts(data)
         return render_template('dashboard.html', loggedUser= user, allthoughts = allthoughts, userLikedthoughts= userLikedthoughts)
     return redirect('/logout')
-
+@app.route('/')
+def home():
+    return redirect('/thoughts')
 
 #Route to display a specific user information
 
